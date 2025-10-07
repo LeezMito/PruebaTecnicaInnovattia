@@ -30,7 +30,8 @@
               }
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "node_modules/ngx-toastr/toastr.css"
             ]
           },
           "configurations": {
@@ -94,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "bd7b0e8b-7896-49e3-86eb-1f03e41641aa"
   }
 }

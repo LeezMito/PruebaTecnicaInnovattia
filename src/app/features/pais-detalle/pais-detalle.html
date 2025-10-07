@@ -1,0 +1,72 @@
+<section class="p-4 max-w-5xl mx-auto">
+    <a class="text-sm underline" href="#">Regresar</a>
+
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+        <div class="border rounded p-3">
+        <img class="w-full h-48 object-cover rounded" [src]="pais.flags.svg" [alt]="pais.name.common" />
+        </div>
+        <div class="border rounded p-3">
+        <h1 class="text-2xl font-semibold">Nombre oficial</h1>
+        <div class="mt-2 space-y-1 text-sm">
+            <div>Capital: {{ pais.capital }}<span></span></div>
+            <div>Subregión: {{ pais.subregion }}<span></span></div>
+        </div>
+        </div>
+    </div>
+
+    <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <div class="border rounded p-3">
+            <h2 class="font-medium">Monedas</h2>
+            
+            @for(currency of pais?.currencies| keyvalue; track currency.key){
+                <div class="mt-2 text-sm">Nombre: <span>{{ currency.value.name }}</span></div>
+                <div class="text-sm">Código: <span>{{ currency.key }}</span></div>
+
+                <div class="mt-2 text-sm">
+                    {{ 1 | currency}} <span class="font-mono">{{ currency.key }}</span> =
+                    <span class="font-semibold">
+                        {{ currency.value.cambio | currency}}
+                    </span>
+                    <span>{{this.signals.modena()}}</span>
+                </div>
+            }
+
+        </div>
+
+        <div class="border rounded p-3">
+            <h2 class="font-medium">Idiomas</h2>
+            <ul class="mt-2 list-disc pl-5 text-sm">
+                @for(leng of pais?.languages| keyvalue; track leng.key){
+                <li>
+                    <div class="mt-2 text-sm"><span>{{ leng.value }}</span></div>
+                </li>
+                }
+                
+            </ul>
+        </div>
+
+        <div class="border rounded p-3">
+            <h2 class="font-medium">Fronteras</h2>
+            <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                @for(border of pais?.borders| keyvalue; track border.key){
+                <span class="border rounded px-2 py-1">{{border.value}}</span>
+                }
+            </div>
+        </div>
+
+        <div class="border rounded p-3">
+        <h2 class="font-medium">Mapa</h2>
+        <iframe 
+            class="w-full h-64 rounded" 
+            [src]="sanitizeMapUrl(pais.maps?.googleMaps || '')" 
+            loading="lazy">
+        </iframe>
+        <a 
+            class="mt-2 inline-block text-sm underline" 
+            href="#" target="_blank" rel="noopener"
+        >
+            Abrir en Google Maps
+        </a>
+        </div>
+    </div>
+</section>

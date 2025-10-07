@@ -1,0 +1,32 @@
+<nav class="absolute w-full bottom-0 z-[100] shadow-[-2px_1px_29px_2px_rgba(112,112,112,.09)]">
+  <ul class="flex justify-around items-center py-2">
+    <li>
+      <a
+        [routerLink]="'/inicio'"
+        routerLinkActive="text-yellow-400"
+        class="flex flex-col items-center text-sm"
+      >
+        <span 
+          class="material-symbols-rounded w-6 h-6 mb-1 leading-none"
+        >
+          home
+        </span>
+        Inicio
+      </a>
+    </li>
+    <li>
+      <a
+        [routerLink]="'/paises'"
+        routerLinkActive="text-yellow-400"
+        class="flex flex-col items-center text-sm"
+      >
+        <span 
+          class="material-symbols-rounded w-6 h-6 mb-1 leading-none"
+        >
+          public
+        </span>
+        Países
+      </a>
+    </li>
+  </ul>
+</nav>

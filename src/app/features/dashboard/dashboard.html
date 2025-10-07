@@ -1,0 +1,21 @@
+<section class="p-4 grid gap-6">
+    <h2 class="text-xl font-semibold">Dashboard</h2>
+    <div class="bg-white rounded-xl shadow p-4">
+    <h3 class="text-lg font-medium mb-2">Distribución de países por región</h3>
+    <canvas
+        baseChart
+        [data]="distribucionChartData"
+        [options]="distribucionChartOptions"
+        chartType="pie">
+    </canvas>
+    </div>
+    <div class="bg-white rounded-xl shadow p-4">
+    <h3 class="text-lg font-medium mb-2">Top 10 países más poblados</h3>
+    <canvas
+        baseChart
+        [data]="poblacionChartData"
+        [options]="poblacionChartOptions"
+        chartType="bar">
+    </canvas>
+    </div>
+</section>
