@@ -1,13 +1,12 @@
 <header class="grid grid-cols-2 m-4 mt-2 mb-2 items-center h-100">
     <div class="flex">
-        <span class="">🌎</span>
-        <h1 class="">World Explorer</h1>
+        <span class="material-symbols-rounded text-[40px] text-white">globe</span>
     </div>
     <div class="justify-self-end self-center">
         <select
             id="currency"
             class="bg-white text-gray-700 text-sm font-medium rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            [ngModel]="signals.modena()" 
+            [ngModel]="signals.modena()"
             (ngModelChange)="signals.setMoneda($event)">
             @for(moneda of monedas.rates | keyvalue; track moneda.key){
                 <option [value]="moneda.key">{{moneda.key}}</option>

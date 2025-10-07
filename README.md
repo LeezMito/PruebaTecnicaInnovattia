@@ -1,59 +1,62 @@
 # WorldExplorer
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+Este proyecto fue realizado con [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
 
 ## Development server
 
-To start a local development server, run:
+Para iniciar tu proyecto:
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Documentación Técnica - Prueba técnica
+Este documento resume los aspectos técnicos principales del proyecto World Explorer, una aplicación web desarrollada con Angular 20. El propósito de esta documentación es servir como guía técnica para comprender la estructura general, tecnologías empleadas y posibles áreas de mejora.
+1. Descripción General
+World Explorer es una aplicación donde permite explorar información de países a través de la REST Countries API y la FXRatesAPI. La aplicación muestra datos como nombre, bandera, población, región, idioma y moneda, además de ofrecer conversión de divisas en tiempo real.
+También se ofrece un dashboard para ver KPIs de indicadores.
+2. Tecnologías Utilizadas
+- **Framework Frontend:** Angular 20
+- **Estilos y Diseño:** TailwindCSS
+- **APIs Externas:** REST Countries API, FXRatesAPI
+- **Lenguaje:** TypeScript
+- **Control de versiones:** Git
+- **Gestión de dependencias:** NPM
+3. Estructura del Proyecto
+El proyecto sigue una estructura modular basada en Angular, con componentes reutilizables y servicios encargados de la comunicación con las APIs externas. Ejemplo simplificado de la estructura:
 
-```bash
-ng generate component component-name
-```
+src/
+ ├── app/
+ │   ├── components/
+ │   ├── services/
+ │   ├── pages/
+ │   └── models/
+ ├── assets/
+ ├── environments/
+ └── main.ts
+4. Funcionalidades Principales
+- Listado de países con información general.
+- Filtro por región, idioma y búsqueda por nombre.
+- Detalle de país con bandera, capital, moneda e idiomas.
+- Conversión de moneda en tiempo real con FXRatesAPI.
+- Visualización adaptable (responsive) para dispositivos móviles.
+5. Mejores Prácticas Aplicadas
+- Uso de componentes desacoplados y reutilizables.
+- Manejo de errores en suscripciones HTTP.
+- Tipado estricto en TypeScript para mejorar la mantenibilidad.
+- Diseño mobile-first con Tailwind.
+- Integración modular de servicios y observables.
+6. Puntos de Mejora
+- Implementar **ordenamiento por población** y otros criterios dinámicos.
+- Realizar **testeo de componentes y servicios** (unitarios e integración).
+- **Optimizar la paleta de colores** para alinearla con una identidad visual de marca.
+- Añadir **animaciones suaves** y microinteracciones para mejorar la UX.
+7. Próximos Pasos
+- Ampliar cobertura de pruebas unitarias.
+- Mejorar performance mediante lazy loading.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
